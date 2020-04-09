@@ -19,16 +19,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bamine.OpenNews",
+      "bundleIdentifier": "com.netbeopen.OpenNews",
       "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.bamine.OpenNews",
+      "package": "com.netbeopen.OpenNews",
       "versionCode": 1
     },
-    "description": "",
-    "facebookScheme": "fb206173947495886",
-    "facebookAppId": "206173947495886",
-    "facebookDisplayName": "OpenNews_"
+    "description": ""
   }
 }

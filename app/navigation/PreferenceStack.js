@@ -5,11 +5,18 @@ const PreferenceStack = createStackNavigator();
 
 function PreferenceStackScreen() {
   return (
-    <PreferenceStack.Navigator headerMode="screen">
+    <PreferenceStack.Navigator
+      headerMode="screen"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#244593",
+        },
+      }}
+    >
       <PreferenceStack.Screen
         name="Preferences"
         component={Preferences}
-        // options={{ headerShown: false }}
+        options={{ headerTintColor: "white" }}
       />
     </PreferenceStack.Navigator>
   );

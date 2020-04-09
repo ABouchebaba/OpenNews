@@ -1,10 +1,8 @@
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
-import { useTheme } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export function HeaderLeft(props) {
-  const theme = useTheme();
   const onPress = () => props.navigation.openDrawer();
   return (
     <TouchableOpacity style={style.left} onPress={onPress}>
@@ -14,7 +12,6 @@ export function HeaderLeft(props) {
 }
 
 export function HeaderRight(props) {
-  const theme = useTheme();
   const onPress = () => props.navigation.navigate("Search");
   return (
     <TouchableOpacity style={style.right} onPress={onPress}>

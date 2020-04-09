@@ -5,8 +5,19 @@ const SettingStack = createStackNavigator();
 
 function SettingStackScreen() {
   return (
-    <SettingStack.Navigator headerMode="screen">
-      <SettingStack.Screen name="Settings" component={Settings} />
+    <SettingStack.Navigator
+      headerMode="screen"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#244593",
+        },
+      }}
+    >
+      <SettingStack.Screen
+        name="Settings"
+        component={Settings}
+        options={{ headerTintColor: "white" }}
+      />
     </SettingStack.Navigator>
   );
 }

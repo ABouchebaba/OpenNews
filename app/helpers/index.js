@@ -3,8 +3,8 @@ import { BACKEND_IMAGE_DIR } from "react-native-dotenv";
 export const getImageSource = (partial_link) => {
   if (partial_link) return { uri: BACKEND_IMAGE_DIR + partial_link };
   // fallback image in assest
-  return { uri: "http://placehold.jp/320x240.png" };
-  // return require("../../assets/splash.png");
+  // return { uri: "http://placehold.jp/320x240.png" };
+  return require("../../assets/placeholder.jpg");
 };
 
 export const dateDifference = (d) => {
