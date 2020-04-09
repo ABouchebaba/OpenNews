@@ -10,7 +10,14 @@ const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
   return (
-    <HomeStack.Navigator headerMode="screen">
+    <HomeStack.Navigator
+      headerMode="screen"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#244593",
+        },
+      }}
+    >
       <HomeStack.Screen
         name="Main"
         component={MainTabs}
@@ -19,15 +26,17 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="Search"
         component={Search}
-        options={props => ({
+        options={(props) => ({
           headerTitle: () => <SearchHeader {...props} />,
-          headerTitleAlign: "center"
+          headerTitleAlign: "center",
+          headerBackTitleStyle: { tintColor: "white" },
+          headerTintColor: "white",
         })}
       />
       <HomeStack.Screen
         name="Article"
         component={Article}
-        // options={{ headerShown: false }}
+        options={{ headerTintColor: "white" }}
       />
     </HomeStack.Navigator>
   );

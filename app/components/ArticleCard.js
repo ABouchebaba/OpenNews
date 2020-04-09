@@ -32,19 +32,32 @@ function ArticleCard(props) {
     dispatch(addBookmark(props.data));
   };
 
+  const chipStyle = theme.dark
+    ? {
+        color: "white",
+        fontWeight: "bold",
+      }
+    : {
+        color: "#244593",
+      };
+
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={pressed}>
         <View style={styles.card}>
           <Image source={image} style={styles.image} />
           <View style={styles.text}>
-            <Text style={styles.sourceAndDate}>{props.data.source}</Text>
+            <Text style={[styles.sourceAndDate, chipStyle]}>
+              {props.data.source}
+            </Text>
             <Text
               style={[styles.title, { color: theme.colors.text, fontSize: 16 }]}
             >
               {props.data.title}
             </Text>
-            <Text style={styles.sourceAndDate}>{props.data.date}</Text>
+            <Text style={[styles.sourceAndDate, chipStyle]}>
+              {props.data.date}
+            </Text>
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -61,9 +74,11 @@ const styles = {
   card: {
     width: "95%",
     minHeight: 0.18 * height,
-    borderBottomWidth: 1,
-    borderColor: "#efefef",
+    borderWidth: 1,
+    borderRadius: 7,
+    borderColor: "#000",
     margin: 5,
+    paddingRight: 10,
     alignSelf: "center",
     flexDirection: "row",
   },
@@ -77,8 +92,8 @@ const styles = {
     justifyContent: "center",
     padding: 3,
     borderRadius: 10,
-    color: "grey",
-    backgroundColor: "#efefef",
+    // color: "grey",
+    // backgroundColor: "#efefef",
     fontSize: 12,
   },
   text: {

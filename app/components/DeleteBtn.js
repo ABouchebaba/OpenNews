@@ -19,7 +19,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     bottom: 0,
-    right: 10,
+    right: 5,
     width: 0.1 * width,
     height: 0.05 * height,
     borderRadius: 0.05 * width,

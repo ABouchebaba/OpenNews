@@ -8,8 +8,7 @@ export function HeaderLeft(props) {
   const onPress = () => props.navigation.openDrawer();
   return (
     <TouchableOpacity style={style.left} onPress={onPress}>
-      {/* <Image source={require("../../assets/hamburger.png")} /> */}
-      <Ionicons name="md-menu" size={30} color={theme.colors.text} />
+      <Ionicons name="md-menu" size={30} color="white" />
     </TouchableOpacity>
   );
 }
@@ -19,8 +18,7 @@ export function HeaderRight(props) {
   const onPress = () => props.navigation.navigate("Search");
   return (
     <TouchableOpacity style={style.right} onPress={onPress}>
-      {/* <Image source={require("../../assets/search.png")} /> */}
-      <Ionicons name="md-search" size={30} color={theme.colors.text} />
+      <Ionicons name="md-search" size={30} color="white" />
     </TouchableOpacity>
   );
 }
@@ -29,17 +27,17 @@ export function renderMainHeader(props) {
   return {
     headerRight: () => <HeaderRight {...props} />,
     headerLeft: () => <HeaderLeft {...props} />,
-    headerTitle: "Open News",
+    headerTitle: "OPEN NEWS",
     headerTitleAlign: "center",
-    headerTitleStyle: { fontWeight: "bold" }
+    headerTitleStyle: { fontWeight: "bold", color: "white" },
   };
 }
 
 const style = {
   left: {
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   right: {
-    paddingRight: 20
-  }
+    paddingRight: 20,
+  },
 };
