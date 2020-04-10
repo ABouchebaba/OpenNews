@@ -3,7 +3,7 @@ import { SET_PREFERENCE } from "../../constants/ActionTypes";
 const initialState = {
   languages: {},
   sources: {},
-  categories: {}
+  categories: {},
 };
 
 const PreferenceReducer = (state = initialState, action) => {
@@ -11,7 +11,12 @@ const PreferenceReducer = (state = initialState, action) => {
     case SET_PREFERENCE: {
       let pref = action.preference;
       let data = action.data;
-      state[pref][data] = !state[pref][data];
+      if (state[pref][data]) {
+        delete state[pref][data];
+      } else {
+        state[pref][data] = true;
+      }
+      // state[pref][data] = !state[pref][data];
       return { ...state };
     }
     default:

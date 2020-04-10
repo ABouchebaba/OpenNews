@@ -13,7 +13,7 @@ const RootDrawer = createDrawerNavigator();
 function RootDrawerScreen() {
   let myTheme = { ...DefaultTheme };
   myTheme.colors.background = "#fff";
-  let theme = useSelector(state => state.settings.theme);
+  let theme = useSelector((state) => state.settings.theme);
   if (theme === "dark") theme = DarkTheme;
   else theme = myTheme;
 

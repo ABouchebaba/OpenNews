@@ -8,7 +8,7 @@ import { useTheme } from "@react-navigation/native";
 
 function SettingsScreen(props) {
   const dispatch = useDispatch();
-  const settings = useSelector(state => state.settings);
+  const settings = useSelector((state) => state.settings);
   const theme = useTheme();
 
   const fontSizes = { min: 12, max: 20 };
@@ -20,7 +20,7 @@ function SettingsScreen(props) {
     fontSize: settings.fontSize,
     lineHeight: settings.lineHeight,
     textAlign: settings.textAlign,
-    color: theme.colors.text
+    color: theme.colors.text,
   };
 
   return (
@@ -34,7 +34,7 @@ function SettingsScreen(props) {
           maximumValue={fontSizes["max"]}
           // maximumTrackTintColor={"red"}
           value={settings.fontSize}
-          onValueChange={value => dispatch(setSetting("fontSize", value))}
+          onValueChange={(value) => dispatch(setSetting("fontSize", value))}
           step={1}
           disabled={false}
           style={styles.fontSizeSlider}
@@ -49,7 +49,7 @@ function SettingsScreen(props) {
           maximumValue={lineHeight["max"]}
           // maximumTrackTintColor={"red"}
           value={settings.lineHeight}
-          onValueChange={value => dispatch(setSetting("lineHeight", value))}
+          onValueChange={(value) => dispatch(setSetting("lineHeight", value))}
           step={1}
           disabled={false}
           style={styles.fontSizeSlider}
@@ -59,7 +59,7 @@ function SettingsScreen(props) {
         <Text style={[styles.textAlignText, { color: theme.colors.text }]}>
           Text align : {settings.textAlign}
         </Text>
-        {textAlign.map(t => {
+        {textAlign.map((t) => {
           const checked = settings.textAlign === t;
           const onPress = () => dispatch(setSetting("textAlign", t));
           return (
@@ -71,7 +71,7 @@ function SettingsScreen(props) {
         <Text style={[styles.textAlignText, { color: theme.colors.text }]}>
           Theme : {settings.theme}
         </Text>
-        {themes.map(t => {
+        {themes.map((t) => {
           const checked = settings.theme === t;
           const onPress = () => dispatch(setSetting("theme", t));
           return (
@@ -102,21 +102,21 @@ const styles = {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
   },
   fontSizeSlider: {
-    width: "65%"
+    width: "65%",
   },
   fontSizeText: {
     fontSize: 16,
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   textAlignText: {
     width: "100%",
     textAlign: "center",
     fontSize: 16,
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  },
 };
 
 export default SettingsScreen;

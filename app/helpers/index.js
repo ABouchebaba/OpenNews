@@ -7,6 +7,18 @@ export const getImageSource = (partial_link) => {
   return require("../../assets/placeholder.jpg");
 };
 
+// TODO: CHANGE THIS PLEASE!!!
+export const catInFrench = (cat) => {
+  switch (cat) {
+    case "Economy":
+      return "Économie";
+    case "Politics":
+      return "Politique";
+    default:
+      return cat;
+  }
+};
+
 export const dateDifference = (d) => {
   let current = new Date();
   let date = new Date(d.replace(" ", "T"));

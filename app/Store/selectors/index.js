@@ -48,7 +48,7 @@ export const preferedArticles = createSelector(
     preferences: state.preferences,
   }),
   ({ articles, preferences }) => {
-    // REFACTORING THIS MIGHT BE A GOOD IDEA
+    // REFACTORING THIS MIGHT BE A GOOD IDEA!!!
     const data = articles.articles.filter((a) => {
       if (Object.keys(preferences["languages"]).length > 0)
         if (!preferences["languages"][a["lang"]]) return false;

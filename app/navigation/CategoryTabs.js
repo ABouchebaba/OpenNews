@@ -3,6 +3,7 @@ import Headlines from "../screens/Headlines";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { useSelector } from "react-redux";
 import { availableCategories } from "../Store/selectors";
+import { catInFrench } from "../helpers";
 
 const CategoryTabs = createMaterialTopTabNavigator();
 
@@ -19,14 +20,14 @@ const CategoryTabsScreen = () => {
   return (
     <CategoryTabs.Navigator tabBarOptions={tabBarOptions}>
       <CategoryTabs.Screen
-        name="All"
+        name="Tout"
         component={Headlines}
         initialParams={{ category: "All" }}
       />
       {categories.map((c) => (
         <CategoryTabs.Screen
           key={c}
-          name={c}
+          name={catInFrench(c)}
           component={Headlines}
           initialParams={{ category: c }}
         />
